@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Main
+{% endblock %}
+
+{% block content %}
+
+
+<h1>Список книг</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong><br>
+                Description: {{ book.description }}<br>
+                Cost: {{ book.cost }}<br>
+                Created Date: {{ book.created_date }}
+                <img src="{{ book.image.url }}" alt="{{ book.title }}">
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
